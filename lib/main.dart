@@ -10,14 +10,7 @@ class CellBuilderPicker extends StatefulWidget {
 }
 
 class ViewNavigationState extends State<CellBuilderPicker> {
-  DateRangePickerController _controller;
-
-  @override
-  initState() {
-    _controller = DateRangePickerController();
-
-    super.initState();
-  }
+  final DateRangePickerController _controller = DateRangePickerController();
 
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -81,7 +74,7 @@ class ViewNavigationState extends State<CellBuilderPicker> {
           )
         ],
       );
-    } else if (_controller.view == DateRangePickerView.century) {
+    } else {
       final int yearValue = cellDetails.date.year;
       return Column(
         children: [
